@@ -8,10 +8,10 @@ import java.util.StringTokenizer;
 
 /**
  * Filter 1 - Input : processes input into data structure ( list ) ; Calls next
- * pipe (CircularShift) after parsing input
+ * filter (CircularShift) after parsing input
  */
 public class Input {
-	public static void inputPipe() {
+	public static void inputFilter() {
 
 		ArrayList<String> wordList = new ArrayList<String>();
 		ArrayList<String> ignoreList = new ArrayList<String>();
@@ -19,7 +19,7 @@ public class Input {
 		parseInputFile("ignore.txt", ignoreList, 1);
 		parseInputFile("input.txt", wordList, 2);
 
-		CircularShift.circularShiftPipe(ignoreList, wordList);
+		CircularShift.circularShiftFilter(ignoreList, wordList);
 	}
 
 	/**

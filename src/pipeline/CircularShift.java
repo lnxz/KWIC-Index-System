@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 /**
  * Filter 2 - Circular Shift : Performs circular shift on the array; Calls next
- * pipe (Alphabetizer) when done with this pipe
+ * filter (Alphabetizer) when done with this filter
  * 
  * @param wordList
  *            input string from previous filter
@@ -17,7 +17,7 @@ import java.util.StringTokenizer;
 
 public class CircularShift {
 
-	public static void circularShiftPipe(List<String> ignoreList, List<String> wordList) {
+	public static void circularShiftFilter(List<String> ignoreList, List<String> wordList) {
 
 		List<String> shiftedList = new ArrayList<String>();
 		LinkedList<String> list = new LinkedList<String>();
@@ -36,7 +36,7 @@ public class CircularShift {
 			// Clears the list after each performShift
 			list.clear();
 		}
-		Alphabetize.alphabetizerPipe(ignoreList, shiftedList);
+		Alphabetize.alphabetizerFilter(ignoreList, shiftedList);
 	}
 
 	/**
@@ -48,8 +48,8 @@ public class CircularShift {
 	 * @param list
 	 *            A linkedList of words to perform circular shift on
 	 * @param ignoreList
-	 *            List of words to ignore
-	 *
+	 *            List of words to ignore, circular shifts with the starting
+	 *            word in the ignore list will be ignored
 	 * @param shiftedList
 	 *            List of shifted sentences after circularShift has been
 	 *            performed
