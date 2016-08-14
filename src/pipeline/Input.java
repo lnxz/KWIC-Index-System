@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 /**
- * Filter 1 - Input : processes input into data structure ( list )
- * Calls next pipe, CircularShift after parsing input
+ * Filter 1 - Input : processes input into data structure ( list ) ; Calls next
+ * pipe (CircularShift) after parsing input
  */
 public class Input {
 	public static void inputPipe() {
@@ -18,7 +18,7 @@ public class Input {
 
 		parseInputFile("ignore.txt", ignoreList, 1);
 		parseInputFile("input.txt", wordList, 2);
-		
+
 		CircularShift.circularShiftPipe(ignoreList, wordList);
 	}
 
@@ -28,13 +28,15 @@ public class Input {
 	 * differently formatted input
 	 * 
 	 * @param path
-	 * 			  path of the input file
+	 *            path of the input file
 	 * @param wordList
-	 * 			  the arraylist to save the parsed input into
+	 *            the arrayList to save the parsed input into
 	 * @param option
 	 *            parses the input differently depending on the option type.
-	 *            Option 1 - parses ignore words in the format "X, X, X, X" into [X][X][X][X]
-	 *            Option 2 - parses word list in the format "XX XX XX, XX XX XX, XX XX XX" into [XX XX XX][XX XX XX][XX XX XX]
+	 *            Option 1 - parses ignore words in the format "X, X, X, X" into
+	 *            [X][X][X][X] Option 2 - parses word list in the format
+	 *            "XX XX XX, XX XX XX, XX XX XX" into [XX XX XX][XX XX XX][XX XX
+	 *            XX]
 	 */
 	private static void parseInputFile(String path, ArrayList<String> wordList, int option) {
 		ArrayList<String> tempList = new ArrayList<String>();
@@ -50,7 +52,8 @@ public class Input {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		// Option 1 - parses ignore words in the format "X, X, X, X" into [X][X][X][X]
+		// Option 1 - parses ignore words in the format "X, X, X, X" into
+		// [X][X][X][X]
 		if (option == 1) {
 			for (int i = 0; i < tempList.size(); i++) {
 				currLine = tempList.get(i).replaceAll(",", "");
@@ -59,7 +62,8 @@ public class Input {
 					wordList.add(st.nextToken().toLowerCase());
 				}
 			}
-		//  Option 2 - parses word list in the format "XX XX XX, XX XX XX, XX XX XX" into [XX XX XX][XX XX XX][XX XX XX]
+			// Option 2 - parses word list in the format "XX XX XX, XX XX XX, XX
+			// XX XX" into [XX XX XX][XX XX XX][XX XX XX]
 		} else if (option == 2) {
 			for (int i = 0; i < tempList.size(); i++) {
 				StringTokenizer st = new StringTokenizer(tempList.get(i), ",");
