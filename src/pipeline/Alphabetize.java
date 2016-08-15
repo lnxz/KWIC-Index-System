@@ -27,7 +27,7 @@ public class Alphabetize {
 
 		// Simple alphabetical order sort using Collections
 		Collections.sort(shiftedList);
-
+		
 		// Need to pass the ignoreList for output to differentiate between
 		// keywords and ignored words
 		Output.outputFilter(ignoreList, shiftedList);

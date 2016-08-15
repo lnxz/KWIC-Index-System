@@ -70,7 +70,8 @@ public class CircularShift {
 					// and add it to shiftedList
 					String recombinedLine = "";
 					for (int k = 0; k < list.size(); k++) {
-						recombinedLine = recombinedLine + list.get(k);
+						// Lower case everything for alphabetical sort to work correctly
+						recombinedLine = recombinedLine + list.get(k).toLowerCase();
 						if (k != list.size() - 1) {
 							recombinedLine = recombinedLine + " ";
 						}
