@@ -4,7 +4,23 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+/*
+ * Author: Bevin Seetoh Jia Jin;
+ * Matric: A0134234R;
+ */
+
+/**
+ * Alphabetizer module that sorts Pairs in alphabetical order
+ */
 public class Alphabetizer {
+    
+    /**
+     * Sorts the given ArrayList of Pairs in alphabetical order based on the shared data storage
+     * 
+     * @param list
+     *        the list of Pairs to sort
+     * @return an ArrayList of sorted Pairs
+     */
     public static ArrayList<Pair> alphabetize(ArrayList<Pair> list) {
         Collections.sort(list, new Comparator<Pair>() {
             @Override

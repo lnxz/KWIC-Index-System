@@ -2,6 +2,11 @@ package shareddata;
 
 import java.util.ArrayList;
 
+/*
+ * Author: Bevin Seetoh Jia Jin;
+ * Matric: A0134234R;
+ */
+
 public class Main {
     
     static ArrayList<String> ignoreList;

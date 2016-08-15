@@ -2,7 +2,20 @@ package shareddata;
 
 import java.util.ArrayList;
 
+/*
+ * Author: Bevin Seetoh Jia Jin;
+ * Matric: A0134234R;
+ */
+
+/**
+ * Circular Shift module that generates pairs of indexes based on the shared data storage
+ */
 public class CircularShift {
+    /**
+     * Performs circular shift based on the ArrayList in the shared data storage
+     * 
+     * @return an ArrayList of Pairs that indicates the line number and starting index to read from
+     */
     public static ArrayList<Pair> shift() {
         ArrayList<Pair> shiftedList = new ArrayList<Pair>();
         

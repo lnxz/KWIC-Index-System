@@ -1,5 +1,13 @@
 package shareddata;
 
+/*
+ * Author: Bevin Seetoh Jia Jin;
+ * Matric: A0134234R;
+ */
+
+/**
+ * Pair class that indicates the line number and starting index of the data
+ */
 public class Pair {
     private int line;
     private int index;
