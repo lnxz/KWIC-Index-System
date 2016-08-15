@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 public class Input {
-    public static void readInput() {
+    public static void read() {
         Main.ignoreList = readFile("ignore.txt");
         Main.wordList = readFile("input.txt");
     }
@@ -30,8 +30,11 @@ public class Input {
             String[] sentences = line.split(",");
             
             for (String sentence : sentences) {
-                sentence = sentence.trim();
-                lines.add(sentence);
+                sentence = sentence.toLowerCase().trim();
+                
+                if (!lines.contains(sentence)) {
+                    lines.add(sentence);
+                }
             }
         }
         

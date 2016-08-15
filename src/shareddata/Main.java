@@ -8,12 +8,9 @@ public class Main {
     static ArrayList<String> wordList;
     
     public static void main(String[] args) {
-        Input.readInput();
-        
-        for (String s : ignoreList)
-            System.out.println("|" + s + "|");
-        
-        for (String s : wordList)
-            System.out.println("|" + s + "|");
+        Input.read();
+        ArrayList<Pair> shiftIndexes = CircularShift.shift();
+        ArrayList<Pair> alphabetizedIndexes = Alphabetizer.alphabetize(shiftIndexes);
+        Output.print(alphabetizedIndexes);
     }
 }
