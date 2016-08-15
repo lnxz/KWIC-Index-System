@@ -5,6 +5,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+/*
+ * Author: Lee Wei Jie Shaun
+ * Matric: A0125497W;
+ */
+
 /**
  * Filter 2 - Circular Shift : Performs circular shift on the array; Calls next
  * filter (Alphabetizer) when done with this filter

@@ -4,6 +4,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+/*
+ * Author: Lee Wei Jie Shaun
+ * Matric: A0125497W;
+ */
+
 /**
  * Filter 4 - Output : Process output of the array from previous filter; Final
  * filter in the pipe

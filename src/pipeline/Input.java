@@ -1,10 +1,15 @@
 package pipeline;
 
 import java.io.BufferedReader;
+
 import java.io.FileReader;
 import java.util.ArrayList;
 
 import java.util.StringTokenizer;
+/*
+ * Author: Lee Wei Jie Shaun
+ * Matric: A0125497W;
+ */
 
 /**
  * Filter 1 - Input : processes input into data structure ( list ) ; Calls next
