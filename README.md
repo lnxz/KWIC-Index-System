@@ -1,6 +1,6 @@
 # cs3219-assignment1 [KWIC (Key Word In Context) index system]
 ### Architecture 1: Pipe and Filter [Shaun]
-### Architecture 2: ? [Bevin]
+### Architecture 2: Shared Data [Bevin]
 ### About
 KWIC provides a search mechanism for information in a list of lines. Given a list of lines and a list of ``words to ignore'', KWIC system should generate a KWIC (Key Word In Context) index of the input lines. In a KWIC-index, a line is listed once for each keyword that occurs in the line. 
 The keyword cannot be in "words to ignore" . Also, KWIC-index is alphabetized by keyword.
