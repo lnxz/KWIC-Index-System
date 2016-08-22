@@ -48,6 +48,7 @@ public class InterfaceController {
             File file = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
             if (file != null) {
                 inputTextField.setText(file.getPath());
+                inputTextField.positionCaret(file.getPath().length());
             }
         });
         
@@ -58,6 +59,7 @@ public class InterfaceController {
             File file = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
             if (file != null) {
                 ignoreTextField.setText(file.getPath());
+                ignoreTextField.positionCaret(file.getPath().length());
             }
         });
         
