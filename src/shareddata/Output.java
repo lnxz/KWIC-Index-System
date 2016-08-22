@@ -17,10 +17,12 @@ public class Output {
      * @param list
      *        ArrayList of Pairs indicating line numbers and starting indexes
      */
-    public static void print(ArrayList<Pair> list) {
+    public static ArrayList<String> print(ArrayList<Pair> list) {
+        ArrayList<String> result = new ArrayList<String>();
+        
         for (Pair pair : list) {
             StringBuilder sb = new StringBuilder();
-            String[] words = Main.wordList.get(pair.getLine()).split(" ");
+            String[] words = SharedData.wordList.get(pair.getLine()).split(" ");
             int index = pair.getIndex();
             
             for (int i = 0; i < words.length; i++) {
@@ -39,9 +41,11 @@ public class Output {
             }
             
             if (!sb.toString().trim().equals("")) {
-                System.out.println(sb.toString().trim());
+                result.add(sb.toString().trim());
             }
         }
+        
+        return result;
     }
     
     /**
@@ -67,7 +71,7 @@ public class Output {
      * @return whether the word is ignored
      */
     private static boolean isIgnored(String word) {
-        for (String ignore : Main.ignoreList) {
+        for (String ignore : SharedData.ignoreList) {
             if (ignore.equalsIgnoreCase(word)) {
                 return true;
             }

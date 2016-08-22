@@ -25,8 +25,8 @@ public class Alphabetizer {
         Collections.sort(list, new Comparator<Pair>() {
             @Override
             public int compare(Pair p1, Pair p2) {
-                String[] lineOne = Main.wordList.get(p1.getLine()).split(" ");
-                String[] lineTwo = Main.wordList.get(p2.getLine()).split(" ");
+                String[] lineOne = SharedData.wordList.get(p1.getLine()).split(" ");
+                String[] lineTwo = SharedData.wordList.get(p2.getLine()).split(" ");
                 
                 //Compare the next word if the first word is the same
                 if (lineOne[p1.getIndex()].equalsIgnoreCase(lineTwo[p2.getIndex()])) {

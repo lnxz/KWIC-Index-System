@@ -7,15 +7,16 @@ import java.util.ArrayList;
  * Matric: A0134234R;
  */
 
-public class Main {
+public class SharedData {
     
     static ArrayList<String> ignoreList;
     static ArrayList<String> wordList;
     
-    public static void main(String[] args) {
-        Input.read();
+    public ArrayList<String> start(String inputFile, String ignoreFile) {
+        Input.read(inputFile, ignoreFile);
         ArrayList<Pair> shiftIndexes = CircularShift.shift();
         ArrayList<Pair> alphabetizedIndexes = Alphabetizer.alphabetize(shiftIndexes);
-        Output.print(alphabetizedIndexes);
+        ArrayList<String> result = Output.print(alphabetizedIndexes);
+        return result;
     }
 }

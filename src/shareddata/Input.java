@@ -17,9 +17,9 @@ public class Input {
      * Parses input from the text files into their respective
      * arrayLists. 
      */
-    public static void read() {
-        Main.ignoreList = readFile("ignore.txt");
-        Main.wordList = readFile("input.txt");
+    public static void read(String inputFile, String ignoreFile) {
+        SharedData.wordList = readFile(inputFile);
+        SharedData.ignoreList = readFile(ignoreFile);
     }
     
     /**
