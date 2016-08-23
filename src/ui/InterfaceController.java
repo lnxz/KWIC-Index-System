@@ -10,8 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
+import pipeline.PipeAndFilter;
 import shareddata.SharedData;
-//import pipeline.PipeAndFilter;
 
 public class InterfaceController {
     @FXML
@@ -79,13 +79,13 @@ public class InterfaceController {
         pipeAndFilterButton.setOnAction((event) -> {
             try {
                 resultsList.clear();
-                /*
+                
                 PipeAndFilter pipeAndFilter = new PipeAndFilter();
                 ArrayList<String> result = pipeAndFilter.start(inputTextField.getText(), ignoreTextField.getText());
                 for (String s : result) {
                     resultsList.add(s);
                 }
-                */
+                
             } catch (Exception e) {
                 resultsList.clear();
             }

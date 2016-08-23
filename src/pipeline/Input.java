@@ -16,15 +16,15 @@ import java.util.StringTokenizer;
  * filter (CircularShift) after parsing input
  */
 public class Input {
-	public static void inputFilter() {
+	public static ArrayList<String> inputFilter(String inputFile, String ignoreFile) {
 
 		ArrayList<String> wordList = new ArrayList<String>();
 		ArrayList<String> ignoreList = new ArrayList<String>();
 
-		parseInputFile("ignore.txt", ignoreList, 1);
-		parseInputFile("input.txt", wordList, 2);
+		parseInputFile(inputFile, wordList, 2);
+		parseInputFile(ignoreFile, ignoreList, 1);
 
-		CircularShift.circularShiftFilter(ignoreList, wordList);
+		return CircularShift.circularShiftFilter(ignoreList, wordList);
 	}
 
 	/**

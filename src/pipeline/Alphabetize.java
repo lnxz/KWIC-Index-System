@@ -1,5 +1,6 @@
 package pipeline;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,7 +30,7 @@ public class Alphabetize {
 	 *            List of shifted sentences after circularShift has been
 	 *            performed
 	 */
-	public static void alphabetizerFilter(List<String> ignoreList, List<String> shiftedList) {
+	public static ArrayList<String> alphabetizerFilter(List<String> ignoreList, List<String> shiftedList) {
 
 		// Remove duplicates
 		shiftedList = shiftedList.stream().distinct().collect(Collectors.toList());
@@ -39,6 +40,6 @@ public class Alphabetize {
 		
 		// Need to pass the ignoreList for output to differentiate between
 		// keywords and ignored words
-		Output.outputFilter(ignoreList, shiftedList);
+		return Output.outputFilter(ignoreList, shiftedList);
 	}
 }

@@ -22,7 +22,7 @@ import java.util.StringTokenizer;
 
 public class CircularShift {
 
-	public static void circularShiftFilter(List<String> ignoreList, List<String> wordList) {
+	public static ArrayList<String> circularShiftFilter(List<String> ignoreList, List<String> wordList) {
 
 		List<String> shiftedList = new ArrayList<String>();
 		LinkedList<String> list = new LinkedList<String>();
@@ -41,7 +41,7 @@ public class CircularShift {
 			// Clears the list after each performShift
 			list.clear();
 		}
-		Alphabetize.alphabetizerFilter(ignoreList, shiftedList);
+		return Alphabetize.alphabetizerFilter(ignoreList, shiftedList);
 	}
 
 	/**

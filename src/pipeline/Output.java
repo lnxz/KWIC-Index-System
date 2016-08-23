@@ -1,5 +1,6 @@
 package pipeline;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -28,10 +29,11 @@ public class Output {
 	 * @param alphabetizedList
 	 *            List of strings from previous filter to be processed
 	 */
-	public static void outputFilter(List<String> ignoreList, List<String> alphabetizedList) {
+	public static ArrayList<String> outputFilter(List<String> ignoreList, List<String> alphabetizedList) {
 		LinkedList<String> list = new LinkedList<String>();
 		LinkedList<String> newList = new LinkedList<String>();
-
+		ArrayList<String> result = new ArrayList<String>();
+		 
 		// Split the line into a LinkedList of words
 		for (int i = 0; i < alphabetizedList.size(); i++) {
 			StringTokenizer st = new StringTokenizer(alphabetizedList.get(i));
@@ -67,11 +69,13 @@ public class Output {
 					recombinedLine = recombinedLine + " ";
 				}
 			}
-			System.out.println(recombinedLine);
+			result.add(recombinedLine);
 			
 			// Clears the list after each "sentence"
 			newList.clear();			
 			list.clear();
+			
 		}
+		return result;
 	}
 }
