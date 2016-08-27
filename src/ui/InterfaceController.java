@@ -1,6 +1,8 @@
 package ui;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
@@ -66,11 +68,15 @@ public class InterfaceController {
         sharedDataButton.setOnAction((event) -> {
             try {
                 resultsList.clear();
+                
                 SharedData sharedData = new SharedData();
-                ArrayList<String> result = sharedData.start(inputTextField.getText(), ignoreTextField.getText());
-                for (String s : result) {
+                ArrayList<String> results = sharedData.start(inputTextField.getText(), ignoreTextField.getText());
+                
+                for (String s : results) {
                     resultsList.add(s);
                 }
+                
+                createOutput("sharedDataOutput.txt", results);
             } catch (Exception e) {
                 resultsList.clear();
             }
@@ -81,14 +87,28 @@ public class InterfaceController {
                 resultsList.clear();
                 
                 PipeAndFilter pipeAndFilter = new PipeAndFilter();
-                ArrayList<String> result = pipeAndFilter.start(inputTextField.getText(), ignoreTextField.getText());
-                for (String s : result) {
+                ArrayList<String> results = pipeAndFilter.start(inputTextField.getText(), ignoreTextField.getText());
+                
+                for (String s : results) {
                     resultsList.add(s);
                 }
                 
+                createOutput("pipeAndFilterOutput.txt", results);
             } catch (Exception e) {
                 resultsList.clear();
             }
         });
+    }
+    
+    private void createOutput(String fileName, ArrayList<String> results) {
+        try {
+            PrintWriter writer = new PrintWriter(fileName);
+            for (String result : results) {
+                writer.println(result);
+            }
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
